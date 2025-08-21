@@ -1,0 +1,52 @@
+### API 1 - GET Todos (Scenario 1 - status)
+GET http://localhost:3000/todos/?status=TO%20DO
+
+### API 1 - GET Todos (Scenario 2 - priority)
+GET http://localhost:3000/todos/?priority=HIGH
+
+### API 1 - GET Todos (Scenario 3 - priority & status)
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+### API 1 - GET Todos (Scenario 4 - search)
+GET http://localhost:3000/todos/?search_q=Play
+
+### API 2 - GET Todo by Id
+GET http://localhost:3000/todos/2/
+
+### API 3 - POST Create Todo
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+### API 4 - PUT Update Todo (Scenario 1 - update status)
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+### API 4 - PUT Update Todo (Scenario 2 - update priority)
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "priority": "HIGH"
+}
+
+### API 4 - PUT Update Todo (Scenario 3 - update todo text)
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "todo": "Some task"
+}
+
+### API 5 - DELETE Todo by Id
+DELETE http://localhost:3000/todos/10/
